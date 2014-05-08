@@ -1,0 +1,31 @@
+AVR-GPS-Logger
+
+This project is about a simple GPS information display using an ATmega168 microcontroller.
+
+It receives GPS data through the UART from a Holux GPS receiver. The NMEA parser extracts
+location information, speed, heading and altitude (nmea.c).
+The display is a DOGM163 connected in 8Bit parallel mode.
+
+Additionally there is support for reading the ambient temperature and humidity
+from a HYT321 via I2C interface (hyt.c). There is also code to calculate the dew point.
+
+I planned to write the information to a SD-Card through the SPI, using some code
+from Roland Riegel (sd_raw.c), but that is not implemented yet...
+
+There is also a file fram.c, which could be used to write data to a FM25L256 serial memory, but I never
+used or tested that either.
+
+The EEPROM and UART code in GPS_Logger.c is taken from Atmel AppNotes.
+
+The project is created with AVR-Studio 4 (just for programming the AVR), and I use eclipse
+and WinAVR-20100110 to edit and compile it.
+The circuit board is created with Target3001!, and included just for reference. Feel free to create your own.
+
+Almost all comments are in german, well, because I'm german and I created this project for myself.
+But I recently got the idea, I could share it, and so I did :-)
+
+
+The code is free software; you can redistribute it and/or modify
+it under the terms of either the GNU General Public License version 2
+or the GNU Lesser General Public License version 2.1, both as
+published by the Free Software Foundation.
